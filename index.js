@@ -130,6 +130,7 @@ function compare_texts(a, b) {
     if (a.text_id < b.text_id) {
         return -1;
     }
+    return 0;
 }
 
 function chat_text2block(chat) {
@@ -244,13 +245,22 @@ function chat2block(chat) {
     }
 }
 
-async function show_chats(chat_list) {
+async function show_chats(chat_list_arg) {
+    console.log('a'.localeCompare('b') > 0, 'b'.localeCompare('a') > 0);
+
+    let chat_list = chat_list_arg;
+    chat_list.sort(function( a, b ) {return -(a.last_edit).localeCompare(b.last_edit);});
+
+    console.log("*\n*\n*\n");
+    console.log(chat_list);
+
     let list_block = "";
     // + `<div class='chat_list_block'>`;
     list_block += `<div>Chat list:</div>`;
 
     let upd_cnt = 0;
     for (chat_elem of chat_list) {
+        console.log(chat_elem.last_edit);
         if (chat_elem.text_cnt > chat_elem.user_text_cnt) {
             upd_cnt++;
         }
