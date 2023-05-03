@@ -14,11 +14,23 @@ async function check_token() {
         localStorage.setItem("user_nm", resp.user_nm);
         localStorage.setItem("bio_txt", resp.bio);
         upd_user();
-        redirect('./index.html', "login.html");
+        
+
+        cur_url = window.location.href;
+        if (cur_url.includes('belkovanya')) {
+            redirect('./', "login.html");
+            redirect('./index.html', "login.html");
+        } else {
+            redirect('./index.html', "login.html");
+        }
     } else {
         cur_url = window.location.href;
         console.log(cur_url.substr(cur_url.lastIndexOf('/') + 1));
-        redirect("./login.html", 'index.html');
+        if (cur_url.includes('belkovanya')) {
+            redirect('./login.html', "/");
+        } else {
+            redirect("./login.html", 'index.html');
+        }
         // if (cur_url.substr(cur_url.lastIndexOf('/') + 1) == 'index.html') { 
         //     window.location.href = "./login.html";
         // }
