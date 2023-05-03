@@ -1,5 +1,6 @@
 
 input, button, select {
+    font-size: 2vh;
     width: 80%;
     padding: 0;
 }
@@ -10,6 +11,7 @@ input, button, select {
 
 .main_block {
     width: 45vh;
+    max-width: 90%;
     font-size: 2vh;
     margin: auto;
     border: 1px solid red;
