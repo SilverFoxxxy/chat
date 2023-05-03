@@ -1,5 +1,5 @@
 
-input {
+input, textarea {
     font-size: 2vh;
     text-align: center;
 }
