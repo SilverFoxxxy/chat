@@ -101,6 +101,8 @@ async function try_open_chat(chat_id, flag = false) {
         }
 
         localStorage.setItem("cur_chat_id", chat_id);
+
+        text_list_onscroll();
     }
     return;
 }
