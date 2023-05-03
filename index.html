@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>BelkaChat</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="tabs.css">
+
+</head>
+<body>
+    <div class="main_block">
+        <span>user: </span><span id="user_nm_block" class="user_nm">no user</span><button id="logout" onclick="logout()">logout</button>
+        <br><br>
+        <div class="tab">
+          <div><button class="tablinks" id="users_bttn" onclick="openTab(event, 'Users')">Users</button></div>
+          <div><button class="tablinks" onclick="openTab(event, 'Chats')">Chats<span id="chat_upd"></span></button></div>
+          <div><button class="tablinks" id="texts_bttn" onclick="openTab(event, 'Texts')">Texts</button></div>
+        </div>
+        <div id="Users" class="tabcontent">
+            <div id="user_list" class="user_list">
+                <input id="search_user_input" style="width: 50%;" placeholder=" user_nm">
+                <button onclick="try_find_users()" style="width: 30%;">&#x1F50E</button><br>
+                <div id="show_friends_bttn_div" style="display:none;">
+                <button onclick="show_friends()" style="width: 70%;">show friend list</button></div><br>
+                <div id="user_list_block" class="user_list_block">
+                    friend_list
+                </div>
+            </div>
+        </div>
+        <div id="Chats" class="tabcontent">
+            <div id="chat_list" class="chat_list">
+                <div id="chat_list_block" class="chat_list_block">
+                    chat_list
+                </div>
+            </div>
+        </div>
+        <div id="Texts" class="tabcontent">
+            <div id="text_list" onscroll="text_list_onscroll()">
+                <div id="text_list_block" class="text_list_block">
+                    text_list
+                </div>
+            </div>
+            <br>
+            <hr>
+            <textarea id="new_text_input" rows="3" cols="30" placeholder="new_message"></textarea>
+            <!-- <input id="add_text_input" placeholder="new_message"> -->
+            <button id="add_text_bttn" onclick="try_add_text()">-></button>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+<script src="http_req.js">
+</script>
+<script src="auto_login.js">
+</script>
+<script src="index.js">
+</script>
+<script src="tabs.js">
+</script>
+
+</html>
+
+

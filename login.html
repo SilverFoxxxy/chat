@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>BelkaChat</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="login.css">
+
+    <script src="http_req.js">
+    </script>
+    <script src="auto_login.js">
+    </script>
+    <script src="login.js">
+    </script>
+</head>
+<body>
+    <div class="main_block">
+        <span>user: </span><span id="user_nm_block" class="user_nm">no user</span>
+        <h1> Login </h1>
+        login:<br>
+        <input id="login"><br>
+        pswd:<br>
+        <input id="pswd" type="password"><br>
+
+        <button id="login_bttn" onclick="tryLogin()">Log in</button>
+
+
+        <h1> Registration </h1>
+        login:<br>
+        <input id="login_reg"><br>
+        <!-- <label for="secure">secure lvl:</label><br>
+
+        <select name="secure" id="secure">
+          <option value="plain_pswd">plain pswd</option>
+          <option value="no_secure">no secure</option>
+          <option value="hash">hashed pswd</option>
+        </select><br>
+        <br> -->
+        pswd:<br>
+        <input id="pswd_reg" type="password"><br>
+        pswd again:<br>
+        <input id="pswd_reg2" type="password"><br>
+
+        <button id="reg_bttn" onclick="tryReg()">Reg</button>
+
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
