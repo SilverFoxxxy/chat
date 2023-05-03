@@ -19,18 +19,19 @@ async function check_token() {
         cur_url = window.location.href;
         if (cur_url.includes('belkovanya')) {
             redirect('./', "login.html");
-            redirect('./index.html', "login.html");
+            // redirect('./index.html', "login.html");
         } else {
             redirect('./index.html', "login.html");
         }
     } else {
         cur_url = window.location.href;
         console.log(cur_url.substr(cur_url.lastIndexOf('/') + 1));
-        if (cur_url.includes('belkovanya')) {
-            redirect('./login.html', "/");
-        } else {
-            redirect("./login.html", 'index.html');
-        }
+        redirect('./login.html', "");
+        // if (cur_url.includes('belkovanya')) {
+            
+        // } else {
+        //     redirect("./login.html", 'index.html');
+        // }
         // if (cur_url.substr(cur_url.lastIndexOf('/') + 1) == 'index.html') { 
         //     window.location.href = "./login.html";
         // }
