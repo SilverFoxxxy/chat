@@ -64,7 +64,10 @@ async function try_add_text() {
     let user_id = parseInt(localStorage.getItem("user_id"));
     let chat_id = parseInt(localStorage.getItem("cur_chat_id"));
     let text = document.getElementById("new_text_input").value;
-    add_text(user_id, token, chat_id, text);
+    let resp = await add_text(user_id, token, chat_id, text);
+    if (resp.status == "ok") {
+        document.getElementById("new_text_input").value = '';
+    }
 }
 
 async function try_open_chat(chat_id, flag = false) {
